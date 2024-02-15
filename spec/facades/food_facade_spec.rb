@@ -20,4 +20,14 @@ RSpec.describe FoodFacade, vcr: true do
       expect(food.id).to eq(2341752)
     end
   end
+
+  describe ".search_by_ingredient" do
+    it "returns 10 foods by ingredient" do
+      foods = FoodFacade.new.search_by_ingredient("anchovies")
+
+      expect(foods).to be_a(Array)
+      expect(foods.length).to eq(10)
+      expect(foods.first).to be_a(Food)
+    end
+  end
 end

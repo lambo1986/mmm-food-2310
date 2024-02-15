@@ -16,6 +16,7 @@ RSpec.describe Food, vcr: true do
     expect(food.description).to eq("A Low-Starch and High-Fiber Diet Intervention Impacts the Microbial Community of Raw Bovine Milk")
     expect(food.data_type).to eq("Experimental")
     expect(food.publication_date).to eq("2022-10-28")
+    expect(food.ingredients).to eq(nil)
     expect(food.food_nutrients).to be_an Array
   end
 end

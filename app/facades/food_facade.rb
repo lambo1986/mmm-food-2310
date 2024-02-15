@@ -11,4 +11,10 @@ class FoodFacade
     call = service.find_food(id)
     food = Food.new(call)
   end
+
+  def search_by_ingredient(ingredient)
+    service = FoodService.new
+    call = service.find_by_ingredient(ingredient)
+    foods = call.map { |food| Food.new(food) }
+  end
 end

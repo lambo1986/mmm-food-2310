@@ -7,7 +7,12 @@ class FoodService
   end
 
   def find_food(food_id)
-    foods = get_url("/fdc/v1/food/#{food_id}?api_key=#{BASE_KEY}")
+    food = get_url("/fdc/v1/food/#{food_id}?api_key=#{BASE_KEY}")
+  end
+
+  def find_by_ingredient(ingredient)
+    foods = get_url("/fdc/v1/foods/search?query=#{ingredient}&api_key=#{BASE_KEY}")
+    foods[:foods].take(10)
   end
 
   private
