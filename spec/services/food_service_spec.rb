@@ -31,6 +31,7 @@ RSpec.describe FoodService, vcr: true do
       foods = FoodService.new.find_by_ingredient("anchovies")
 
       expect(foods).to be_an(Array)
+      expect(foods.length).to eq(10)
       expect(foods.first).to be_a(Hash)
       expect(foods.first[:fdcId]).to be_an(Integer)
       expect(foods.first[:dataType]).to be_a(String)
