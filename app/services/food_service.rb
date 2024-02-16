@@ -15,8 +15,8 @@ class FoodService
     foods = foods[:foods]
     filtered_foods = foods.select do |food|
       if food[:ingredients]
-      food_ingredients = food[:ingredients].downcase
-      food_ingredients.include?(ingredient.downcase)
+        food_ingredients = food[:ingredients].downcase
+        food_ingredients.include?(ingredient.downcase)
       else
         false
       end
@@ -29,8 +29,8 @@ class FoodService
     foods = foods[:foods]
     filtered_foods = foods.select do |food|
       if food[:ingredients]
-      food_ingredients = food[:ingredients].downcase
-      food_ingredients.include?(ingredient.downcase)
+        food_ingredients = food[:ingredients].downcase
+        food_ingredients.include?(ingredient.downcase)
       else
         false
       end
