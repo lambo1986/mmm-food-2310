@@ -12,12 +12,30 @@ class FoodService
 
   def find_by_ingredient(ingredient)
     foods = get_url("/fdc/v1/foods/search?query=#{ingredient}&api_key=#{BASE_KEY}")
-    foods[:foods].take(10)
+    foods = foods[:foods]
+    filtered_foods = foods.select do |food|
+      if food[:ingredients]
+      food_ingredients = food[:ingredients].downcase
+      food_ingredients.include?(ingredient.downcase)
+      else
+        false
+      end
+    end
+    filtered_foods.take(10)
   end
 
   def total_by_ingredient(ingredient)
     foods = get_url("/fdc/v1/foods/search?query=#{ingredient}&api_key=#{BASE_KEY}")
-    foods[:totalHits]
+    foods = foods[:foods]
+    filtered_foods = foods.select do |food|
+      if food[:ingredients]
+      food_ingredients = food[:ingredients].downcase
+      food_ingredients.include?(ingredient.downcase)
+      else
+        false
+      end
+    end
+    filtered_foods.count
   end
 
   private
