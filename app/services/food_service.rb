@@ -15,6 +15,11 @@ class FoodService
     foods[:foods].take(10)
   end
 
+  def total_by_ingredient(ingredient)
+    foods = get_url("/fdc/v1/foods/search?query=#{ingredient}&api_key=#{BASE_KEY}")
+    foods[:totalHits]
+  end
+
   private
 
   def get_url(url)

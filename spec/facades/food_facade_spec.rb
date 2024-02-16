@@ -30,4 +30,12 @@ RSpec.describe FoodFacade, vcr: true do
       expect(foods.first).to be_a(Food)
     end
   end
+
+  describe ".results_count" do
+    it "returns the number of results" do
+      count = FoodFacade.new.results_count("anchovies")
+
+      expect(count).to eq(2362)
+    end
+  end
 end

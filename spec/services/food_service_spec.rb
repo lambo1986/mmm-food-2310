@@ -40,4 +40,12 @@ RSpec.describe FoodService, vcr: true do
       expect(foods.first[:ingredients]).to be_a(String)
     end
   end
+
+  describe ".total_by_ingredient(ingredient)" do
+    it "returns the total number of foods that contain the ingredient" do
+      count = FoodService.new.total_by_ingredient("anchovies")
+
+      expect(count).to be_an(Integer)
+    end
+  end
 end
