@@ -1,0 +1,12 @@
+<h1>Search Results</h1>
+
+<h2>Foods Containing ingredient <%= @ingredient %>:</h2>
+
+<h3><% @searched_foods.each do |food| %>
+  <ul>
+    <li>GTIN/UPC: <%= food.gtin_upc %></li>
+    <li>Description: <%= food.description %></li>
+    <li>Brand Owner: <%= food.brand_owner %></li>
+    <li>Ingredients: <%= food.ingredients %></li>
+  </ul>
+<% end %></h3>
