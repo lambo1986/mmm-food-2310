@@ -12,7 +12,7 @@ RSpec.describe "welcome index", vcr: true, type: :feature do
     expect(current_path).to eq(foods_path)
     expect(page).to have_content("Search Results")
     expect(page).to have_content("Total Results:")
-    expect(page).to have_content("Foods Containing ingredient sweet potatoes:")
+    expect(page).to have_content("10 Foods Containing ingredient sweet potatoes:")
     expect(page).to have_content("GTIN/UPC:")
     expect(page).to have_content("Description:")
     expect(page).to have_content("Brand Owner:")
