@@ -31,9 +31,9 @@ RSpec.describe FoodFacade, vcr: true do
     end
   end
 
-  describe ".results_count" do
+  describe ".by_ingredient_results_count" do
     it "returns the number of results" do
-      count = FoodFacade.new.results_count("anchovies")
+      count = FoodFacade.new.by_ingredient_results_count("anchovies")
 
       expect(count).to eq(28)
     end

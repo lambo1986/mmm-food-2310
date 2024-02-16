@@ -18,7 +18,7 @@ class FoodFacade
     foods = response.map { |food| Food.new(food) }
   end
 
-  def results_count(ingredient)
+  def by_ingredient_results_count(ingredient)
     service = FoodService.new
     response = service.total_by_ingredient(ingredient)
   end

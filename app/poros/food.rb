@@ -1,4 +1,5 @@
 class Food
+  
   attr_reader :id,
               :description,
               :data_type,
@@ -7,6 +8,7 @@ class Food
               :ingredients,
               :gtin_upc,
               :brand_owner
+
   def initialize(attrs)
     @id = attrs[:fdcId]
     @description = attrs[:description]
