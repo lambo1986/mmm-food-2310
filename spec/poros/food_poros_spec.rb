@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe Food, vcr: true do
+RSpec.describe Food do
   it "exists" do
     attrs = {
       fdcId: 2353623,
